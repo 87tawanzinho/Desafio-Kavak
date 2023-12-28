@@ -26,7 +26,7 @@ export default function Cadastro() {
         alt="Img-Car"
       />
 
-      <div className="flex flex-col items-center w-full mt-40 gap-2">
+      <div className="flex flex-col items-center w-screen mt-40 gap-2">
         <p className="text-2xl font-bold">Iniciar sessão</p>
         <p className="text-gray-300 text-xs">E-mail: "123" password: "123"</p>
         <input
