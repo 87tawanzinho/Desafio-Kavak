@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import menu from "@/public/images/menu.gif";
+import menu from "@/public/images/menu.png";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 export default function Navbar() {
@@ -40,7 +40,7 @@ export default function Navbar() {
           <Image
             src={menu}
             alt="menu"
-            className="h-8"
+            className="h-7 w-7 mr-2"
             onClick={() => setMenuModal(true)}
           />
         )}

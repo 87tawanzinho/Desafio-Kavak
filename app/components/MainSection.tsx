@@ -2,7 +2,7 @@ import Image from "next/image";
 import gps from "@/public/images/gps.png";
 export default function Mainsection() {
   return (
-    <main className="flex flex-col lg:flex-row p-4 mt-20 lg:p-24 gap-8">
+    <main className="flex flex-col lg:flex-row p-4 mt-10 lg:p-24 gap-8">
       <div className="border rounded-lg  border-gray-200">
         <img
           src="https://images.prd.kavak.io/eyJidWNrZXQiOiJrYXZhay1pbWFnZXMiLCJrZXkiOiJpbWFnZXMvMjkxNjczL0VYVEVSSU9SLWZyb250U2lkZVBpbG90TmVhci0xNzAzMjY1OTc2MjQ4LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgxMCwiaGVpZ2h0Ijo0NjV9fX0="
