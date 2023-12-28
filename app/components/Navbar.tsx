@@ -30,12 +30,14 @@ export default function Navbar() {
 
       <div className="flex lg:hidden">
         {menuModal ? (
-          <p
-            className="px-4 font-bold text-2xl text-red-700"
-            onClick={() => setMenuModal(false)}
-          >
-            X
-          </p>
+          <div className="absolute h-full w-full bg-white top-0 left-0">
+            <p
+              className="px-4 font-bold text-2xl absolute end-0 top-2 text-red-700"
+              onClick={() => setMenuModal(false)}
+            >
+              X
+            </p>
+          </div>
         ) : (
           <Image
             src={menu}
