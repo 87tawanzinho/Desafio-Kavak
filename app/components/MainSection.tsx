@@ -1,3 +1,5 @@
+import Image from "next/image";
+import gps from "@/public/images/gps.png";
 export default function Mainsection() {
   return (
     <main className="flex flex-col lg:flex-row p-4 mt-20 lg:p-24 gap-8">
@@ -13,7 +15,8 @@ export default function Mainsection() {
           <p className="font-bold text-xl text-gray-800">
             <span className="text-sm text-gray-600 mr-1">R$</span>69.2999
           </p>
-          <p className=" mt-4 border-t-2 pt-4 pb-4 border-gray-100 text-sm">
+          <p className=" mt-4 border-t-2 pt-4 pb-4 border-gray-100 text-sm flex items-center gap-2 ">
+            <Image src={gps} alt="gps" className="h-4 w-4 object-cover" />
             São paulo
           </p>
         </div>
