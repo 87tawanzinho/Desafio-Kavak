@@ -58,14 +58,31 @@ export default function Navbar() {
               <p className="font-bold text-xl">Nós lhe damos as boas vindas</p>
               <p>Faça login para poder criar um novo veiculo</p>
 
-              <Link href="/Login">
+              <Link href="/Login" onClick={() => setMenuModal(false)}>
                 <button className="mt-4 w-11/12 bg-black text-white">
                   Login
                 </button>
               </Link>
             </div>
           ) : (
-            <p>Se concentre em se autenticar</p>
+            <div>
+              <p>Se concentre em se autenticar 🤣 </p>
+              <div className="flex items-center gap-2 mt-8 p-8">
+                <button
+                  className="bg-red-500 text-white font-bold "
+                  onClick={() => setMenuModal(false)}
+                >
+                  Fechar
+                </button>
+
+                <Link href={"/"} onClick={() => setMenuModal(false)}>
+                  {" "}
+                  <button className="bg-black text-white">
+                    Pagina Inicial
+                  </button>
+                </Link>
+              </div>
+            </div>
           )}
         </div>
       )}

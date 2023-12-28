@@ -1,13 +1,22 @@
 "use client";
+import { jwtDecode } from "jwt-decode";
 import { useState } from "react";
+import { instance } from "../axios/Instance";
 
 type login = {
-  email: string;
+  name: string;
   password: string;
 };
+
+type jwt = {
+  name: string;
+};
 export default function Cadastro() {
+  const instanceLogin = instance;
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
   const [data, setData] = useState<login>({
-    email: "",
+    name: "",
     password: "",
   });
 
@@ -18,6 +27,30 @@ export default function Cadastro() {
       [name]: value,
     }));
   };
+
+  const axiosRequest = async () => {
+    setSuccess("");
+    setError("");
+    try {
+      const response = await instanceLogin.post("/loginUser", {
+        name: data.name,
+        password: data.password,
+      });
+
+      if (response.data.token) {
+        const decoded = jwtDecode<jwt>(response.data.token);
+        console.log(decoded);
+        window.localStorage.setItem("name", decoded.name);
+        window.location.href = "/Dashboard";
+      }
+      console.log(response);
+      setSuccess("Se conectando, aguarde..");
+    } catch (err) {
+      console.log(err);
+      setError("Erro ao iniciar sessão");
+    }
+  };
+
   return (
     <div className="flex  ">
       <img
@@ -28,12 +61,12 @@ export default function Cadastro() {
 
       <div className="flex flex-col items-center w-screen mt-40 gap-2">
         <p className="text-2xl font-bold">Iniciar sessão</p>
-        <p className="text-gray-300 text-xs">E-mail: "123" password: "123"</p>
+        <p className="text-gray-300 text-xs">Nome: "123" Senha: "123"</p>
         <input
           type="text"
-          placeholder="E-mail"
-          value={data.email}
-          name="email"
+          placeholder="Nome"
+          value={data.name}
+          name="name"
           onChange={handleData}
         />
         <input
@@ -50,9 +83,9 @@ export default function Cadastro() {
           </span>{" "}
           Kavak.
         </p>
-        <button disabled={data.email !== "123" || data.password !== "123"}>
-          Entrar
-        </button>
+        <button onClick={axiosRequest}>Entrar</button>
+        {success && <p className="text-green-600">{success}</p>}
+        {error && <p className="text-red-600">{error}</p>}
       </div>
     </div>
   );
