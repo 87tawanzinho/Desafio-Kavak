@@ -1,10 +1,10 @@
 export default function Mainsection() {
   return (
-    <main className="flex flex-col lg:flex-row p-0 lg:p-24 gap-8">
-      <div className="border rounded-lg">
+    <main className="flex flex-col lg:flex-row p-4 mt-20 lg:p-24 gap-8">
+      <div className="border rounded-lg  border-gray-200">
         <img
           src="https://images.prd.kavak.io/eyJidWNrZXQiOiJrYXZhay1pbWFnZXMiLCJrZXkiOiJpbWFnZXMvMjkxNjczL0VYVEVSSU9SLWZyb250U2lkZVBpbG90TmVhci0xNzAzMjY1OTc2MjQ4LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgxMCwiaGVpZ2h0Ijo0NjV9fX0="
-          className="w-screen lg:w-72 h-96 lg:h-40 bg-black"
+          className="w-screen lg:w-72  object-contain"
         ></img>
         <div className=" pt-2 flex flex-col gap-2 px-4">
           <p className="font-bold">Honda Fit</p>
