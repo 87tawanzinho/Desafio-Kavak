@@ -21,6 +21,7 @@ export default function Navbar() {
     setMenuModal(false)
     window.localStorage.removeItem('id')
     window.localStorage.removeItem('name')
+    window.localStorage.removeItem('token')
     console.log('outing')
   }
   return (
