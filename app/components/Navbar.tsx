@@ -8,6 +8,15 @@ export default function Navbar() {
   const [menuModal, setMenuModal] = useState(false);
   const pathname = usePathname();
   const isValidToShowThis = pathname === "/Dashboard" || pathname === "/Login";
+  const ILogged = window.localStorage.getItem("id") ? true : false;
+
+  const outAccount = () => {
+    window.location.href = "/";
+    setMenuModal(false);
+    window.localStorage.removeItem("id");
+    window.localStorage.removeItem("name");
+    console.log("outing");
+  };
   return (
     <header className="flex justify-between items-center px-0 lg:px-40 border-2 border-b-gray-200">
       <div>
@@ -19,12 +28,22 @@ export default function Navbar() {
       </div>
 
       <div className="hidden lg:flex gap-8 text-gray-600">
-        <a href="">Comprar carro</a>
-        <a href="">Vender Carro</a>
-        <a href="">App Kavak</a>
-        <Link href="/Login" className="text-red-600">
-          Entrar
-        </Link>
+        <a href="https://www.linkedin.com/in/thiago-tawan/" target="_blank">
+          Linkedin
+        </a>
+        <a href="https://github.com/87tawanzinho" target="_blank">
+          Github
+        </a>
+
+        {!ILogged ? (
+          <Link href="/Login" className="text-red-600">
+            Entrar
+          </Link>
+        ) : (
+          <Link href="/" className="text-red-600" onClick={outAccount}>
+            Sair
+          </Link>
+        )}
       </div>
 
       <div className="flex lg:hidden">
@@ -48,10 +67,7 @@ export default function Navbar() {
       </div>
 
       {menuModal && (
-        <div
-          className=" fixed h-full w-full top-0 left-0 mt-20 text-center"
-          bg-black
-        >
+        <div className=" fixed h-full w-full top-0 left-0  pt-24 text-center bg-white z-50">
           {!isValidToShowThis ? (
             <div>
               <p className="font-bold text-xl">Nós lhe damos as boas vindas</p>
@@ -74,12 +90,9 @@ export default function Navbar() {
                   Fechar
                 </button>
 
-                <Link href={"/"} onClick={() => setMenuModal(false)}>
-                  {" "}
-                  <button className="bg-black text-white">
-                    Pagina Inicial
-                  </button>
-                </Link>
+                <button className="bg-black text-white" onClick={outAccount}>
+                  Sair da conta
+                </button>
               </div>
             </div>
           )}

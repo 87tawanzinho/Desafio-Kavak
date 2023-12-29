@@ -44,6 +44,7 @@ export default function Cadastro() {
         const decoded = jwtDecode<jwt>(response.data.token);
         console.log(decoded);
         window.localStorage.setItem("name", decoded.name);
+        console.log(decoded);
         window.localStorage.setItem("id", decoded.id);
         window.location.href = "/Dashboard";
       }

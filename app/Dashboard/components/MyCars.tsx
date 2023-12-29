@@ -8,8 +8,11 @@ export default function MyCars() {
   useEffect(() => {
     const fetchData = async () => {
       const res = await instance.get(`userCars/658e51b2b0ad33ad703f0e63`);
-      console.log(res.data.userCars);
-      setVehicles(res.data.userCars);
+      const shortPriceCars = res.data.userCars.sort(
+        // todo - tipagem
+        (a: any, b: any) => b.price - a.price
+      );
+      setVehicles(shortPriceCars);
     };
     fetchData();
   }, []);
@@ -29,9 +32,10 @@ export default function MyCars() {
                   <img
                     src={car.photo}
                     alt="foto"
-                    className="h-10 w-10 object-cover"
+                    className="h-10 w-10 object-cover rounded-lg"
                   />
                   <p className="text-gray-600">{car.name}</p>
+                  <p className="text-green-800">${car.price}</p>
                 </div>
                 <button className=" text-center button-delete">X</button>
               </div>
