@@ -90,12 +90,14 @@ export default function Navbar() {
               <p>Está gostando da experiência?</p>
               <div className='flex items-center gap-2 mt-8 p-8 flex-wrap justify-center'>
                 <div className='flex flex-col gap-4'>
-                  <Link href='/'>
+                  <Link href='/' onClick={() => setMenuModal(false)}>
                     <button>Inicio</button>
                   </Link>
                   <Link href='/Dashboard'>
                     {' '}
-                    <button className='bg-green-300 border-none'>Dashboard</button>
+                    <button className='bg-green-300 border-none' onClick={() => setMenuModal(false)}>
+                      Dashboard
+                    </button>
                   </Link>
                   <Link href='https://github.com/87tawanzinho' target='blank'>
                     <button className='bg-violet-300 border-none'>Github</button>
