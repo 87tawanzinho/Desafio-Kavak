@@ -86,3 +86,16 @@ a:hover {
 .shadow {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+.button-edit {
+  color: #fff;
+  padding: 0.5em 0em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  width: 60px;
+
+  background: #5f570d;
+  border: none;
+  transition: all 0.3s;
+  box-shadow: 4px 4px 6px #868686, 6px -6px 12px #ffffff;
+}
