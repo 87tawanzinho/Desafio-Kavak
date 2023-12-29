@@ -10,6 +10,7 @@ type login = {
 
 type jwt = {
   name: string;
+  id: string;
 };
 export default function Cadastro() {
   const instanceLogin = instance;
@@ -43,6 +44,7 @@ export default function Cadastro() {
         const decoded = jwtDecode<jwt>(response.data.token);
         console.log(decoded);
         window.localStorage.setItem("name", decoded.name);
+        window.localStorage.setItem("id", decoded.id);
         window.location.href = "/Dashboard";
       }
       console.log(response);

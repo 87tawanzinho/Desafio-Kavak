@@ -1,10 +1,11 @@
 import { instance } from "@/app/axios/Instance";
 import { CarI } from "@/app/interface/CarInterface";
 import validateForm from "@/app/validations/validateForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function DashboardForm() {
   const instanceCreate = instance;
+  const [userId, setUserId] = useState<string | null>("");
   const [data, setData] = useState<CarI>({
     name: "",
     brand: "",
@@ -22,6 +23,19 @@ export default function DashboardForm() {
     const { name, value } = e.target;
     setData((prev) => ({ ...prev, [name]: value }));
   };
+
+  useEffect(() => {
+    // Check if running on the client side
+    if (typeof window !== "undefined") {
+      // Access window.localStorage safely
+
+      const userId = window.localStorage.getItem("id");
+      if (!userId) {
+        window.location.href = "/Login";
+      }
+      setUserId(userId);
+    }
+  }, []);
 
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -45,6 +59,7 @@ export default function DashboardForm() {
     }
     try {
       const response = await instanceCreate.post("/createCar", {
+        userId: userId,
         name: data.name,
         brand: data.brand,
         model: data.model,
@@ -113,8 +128,8 @@ export default function DashboardForm() {
         name="photo"
         onChange={handleFileChange}
       />
-      {error && <p className="text-red-600">{error}</p>}
-      {warn && <p className="text-yellow-600">{warn}</p>}
+      {error && <p className="text-red-900">{error}</p>}
+      {warn && <p className="text-gray-200">{warn}</p>}
       <div className="flex gap-2 w-48">
         <button
           type="submit"

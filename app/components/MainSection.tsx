@@ -21,8 +21,11 @@ export default function Mainsection() {
   const takeCars = async () => {
     try {
       const response = await axiosI.get("/");
-      setCars(response.data.cars);
-      console.log(response.data.cars);
+      // todo -- tipagem
+      let priceOrder = response.data.cars.sort(
+        (a: any, b: any) => b.price - a.price
+      );
+      setCars(priceOrder);
     } catch (err) {
       console.log(err);
     }
