@@ -61,7 +61,10 @@ export default function DashboardForm() {
   };
 
   return (
-    <form className="flex flex-col gap-4" onSubmit={axiosRequest}>
+    <form
+      className="flex flex-col gap-4 md:w-1/2 shadow p-4 bg-zinc-400 rounded-lg "
+      onSubmit={axiosRequest}
+    >
       <input
         type="text"
         placeholder="Nome do carro"
@@ -91,8 +94,8 @@ export default function DashboardForm() {
         onChange={changeData}
       />
       <input
-        type="text"
-        placeholder="Km Rodado"
+        type="Number"
+        placeholder="Quilômetragem"
         name="km"
         value={data.km}
         onChange={changeData}

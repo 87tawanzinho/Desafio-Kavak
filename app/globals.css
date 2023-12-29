@@ -5,14 +5,24 @@
 input {
   padding: 8px;
   border-radius: 4px;
-  width: 300px;
+
   background: rgb(245, 245, 245);
 }
 
 button {
+  transition: all;
   padding: 8px;
   border-radius: 4px;
   width: 200px;
   color: white;
-  background: rgb(56, 16, 56);
+  background: rgb(61, 61, 61);
+}
+
+button:hover,
+a:hover {
+  transition: all;
+  opacity: 80%;
+}
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
