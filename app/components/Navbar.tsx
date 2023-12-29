@@ -87,7 +87,7 @@ export default function Navbar() {
             </div>
           ) : (
             <div>
-              <p>Você é incrível 💘</p>
+              <p>Está gostando da experiência?</p>
               <div className='flex items-center gap-2 mt-8 p-8 flex-wrap justify-center'>
                 <div className='flex flex-col gap-4'>
                   <Link href='/'>
