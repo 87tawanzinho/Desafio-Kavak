@@ -1,12 +1,14 @@
 'use client'
+// Sessão dos carros
 import Image from 'next/image'
 import gps from '@/public/images/gps.png'
 import { instance } from '../axios/Instance'
 import { useEffect, useState } from 'react'
 import { CarI } from '../interface/CarInterface'
 export default function Mainsection() {
-  const axiosI = instance
+  const axiosI = instance // pega a url da api
   const [cars, setCars] = useState<CarI[]>([
+    // define o modelo do carro
     {
       name: '',
       brand: '',
@@ -19,10 +21,11 @@ export default function Mainsection() {
     }
   ])
   const takeCars = async () => {
+    // pega os carros
     try {
       const response = await axiosI.get('/')
       // todo -- tipagem
-      let priceOrder = response.data.cars.sort((a: any, b: any) => b.price - a.price)
+      let priceOrder = response.data.cars.sort((a: any, b: any) => b.price - a.price) // ordena
       setCars(priceOrder)
     } catch (err) {
       console.log(err)
