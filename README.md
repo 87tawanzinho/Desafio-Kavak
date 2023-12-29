@@ -29,3 +29,5 @@ A pasta public lista todas as imagens da aplicaçao
 Em globals.css tem alguns estilos pré definidos, mas eu utilizei de forma majoritaria o TailwindCSS
 
 Para esse desafio eu quis trazer um layout clean e minimalista, deixando apenas o essencial na tela.
+
+Link: https://desafio-kavak.vercel.app/
