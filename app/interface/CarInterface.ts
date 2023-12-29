@@ -9,3 +9,8 @@ export interface CarI {
   _id?: string
   owner?: string
 }
+
+export interface editCar {
+  carId: string | undefined
+  owner: string | undefined
+}

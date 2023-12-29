@@ -25,17 +25,14 @@ export default function DashboardForm() {
   }
 
   useEffect(() => {
-    // Check if running on the client side
     if (typeof window !== 'undefined') {
-      // Access window.localStorage safely
-
       const userId = window.localStorage.getItem('id')
       if (!userId) {
         window.location.href = '/Login'
       }
       setUserId(userId)
     }
-  }, [])
+  })
 
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -70,7 +67,7 @@ export default function DashboardForm() {
         userId: userId,
         name: data.name,
         brand: data.brand,
-        model: data.model,
+        model: data.model.toString(),
         photo: data.photo.split(',')[1], // Extract the Base64-encoded part
         price: data.price,
         localization: data.localization,
@@ -80,13 +77,15 @@ export default function DashboardForm() {
       window.location.reload()
     } catch (err) {
       console.error('Erro ao enviar o formulario:', err)
+      setWarn('')
+      setError('Ocorreu um erro, tente novamente mais tarde.')
     }
   }
 
   return (
     <form className='flex flex-col gap-4 md:w-1/2 shadow p-4 bg-zinc-400 rounded-lg ' onSubmit={axiosRequest}>
       <input type='text' placeholder='Nome do carro' name='name' value={data.name} onChange={changeData} />
-      <input type='text' placeholder='Modelo' name='model' value={data.model} onChange={changeData} />
+      <input type='number' placeholder='Modelo' name='model' value={data.model} onChange={changeData} />
       <input type='text' placeholder='Marca' name='brand' value={data.brand} onChange={changeData} />
       <input type='number' placeholder='Preço' name='price' value={data.price} onChange={changeData} />
       <input type='Number' placeholder='Quilômetragem' name='km' value={data.km} onChange={changeData} />

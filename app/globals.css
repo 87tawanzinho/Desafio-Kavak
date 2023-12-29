@@ -99,3 +99,55 @@ a:hover {
   transition: all 0.3s;
   box-shadow: 4px 4px 6px #868686, 6px -6px 12px #ffffff;
 }
+
+.wave-group {
+  position: relative;
+}
+
+.wave-group input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #515151;
+  background: transparent;
+}
+
+.wave-group input:focus {
+  outline: none;
+}
+
+.wave-group label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  display: flex;
+}
+
+.formEdit input {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+label {
+  text-align: start;
+  font-size: 22px;
+  color: rgb(41, 41, 41);
+}
+@media (max-width: 900px) {
+  .formEdit input {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .formEdit {
+    padding-bottom: 20px;
+  }
+}

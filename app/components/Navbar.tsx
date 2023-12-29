@@ -2,11 +2,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import menu from '@/public/images/menu.png'
-import { useState } from 'react'
-import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
+
 export default function Navbar() {
   const [menuModal, setMenuModal] = useState(false)
-  const ILogged = localStorage.getItem('id') ? true : false
+  const [ILogged, setILogged] = useState<string>('')
+
+  useEffect(() => {
+    const localStorageIsDefined = typeof localStorage !== 'undefined' && typeof window !== 'undefined'
+    const userIsLogged = localStorageIsDefined ? localStorage.getItem('id') : false
+    if (userIsLogged) {
+      setILogged(userIsLogged)
+    }
+  }, []) // Run only once on component mount
 
   const outAccount = () => {
     window.location.href = '/'
