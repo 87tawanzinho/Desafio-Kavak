@@ -133,13 +133,13 @@ export default function DashboardForm() {
       <div className="flex gap-2 w-48">
         <button
           type="submit"
-          className="bg-red-600 text-white"
+          className="button-form-register"
           onClick={() => setButtonClicked(true)}
         >
           Cadastrar
         </button>
         <button
-          className="bg-black text-white"
+          className="button-form-back"
           onClick={() => (window.location.href = "/Dashboard")}
         >
           Voltar

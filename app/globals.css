@@ -1,23 +1,83 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 input {
-  padding: 8px;
-  border-radius: 4px;
-
-  background: rgb(245, 245, 245);
+  font-family: monospace;
+  width: 250px;
+  outline: none;
+  border: 1px solid #dadada;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #c5c5c5;
+  transition: 0.3s;
+  color: #313131;
 }
 
-button {
-  transition: all;
-  padding: 8px;
-  border-radius: 4px;
-  width: 200px;
+input:focus {
+  border: 1px solid #63636350;
+  box-shadow: 0 0 0 2px #494949;
+}
+
+input::placeholder {
+  color: black;
+}
+
+input::placeholder {
   color: white;
-  background: rgb(61, 61, 61);
+}
+button {
+  color: #090909;
+  padding: 0.4em 1.4em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  width: 200px;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  box-shadow: 4px 4px 6px #868686, 6px -6px 12px #ffffff;
 }
 
+.button-form-back {
+  color: #fff;
+  padding: 0.4em 1.4em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  width: 200px;
+  background: #292929;
+  border: none;
+  transition: all 0.3s;
+  box-shadow: none;
+}
+
+.button-form-register {
+  color: #fff;
+  padding: 0.4em 1.4em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  width: 200px;
+  background: #5d925c;
+  border: none;
+  transition: all 0.3s;
+  box-shadow: 4px 4px 6px #868686, 6px -6px 12px #cacaca;
+}
+
+button:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+.button-delete {
+  color: #fff;
+  padding: 0.5em 0em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  width: 30px;
+
+  background: #e44848;
+  border: none;
+  transition: all 0.3s;
+  box-shadow: 4px 4px 6px #868686, 6px -6px 12px #ffffff;
+}
 button:hover,
 a:hover {
   transition: all;

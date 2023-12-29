@@ -33,7 +33,7 @@ export default function MyCars() {
                   />
                   <p className="text-gray-600">{car.name}</p>
                 </div>
-                <button className="w-8 h-10 text-center">X</button>
+                <button className=" text-center button-delete">X</button>
               </div>
             ))}
           </div>
