@@ -7,8 +7,7 @@ import { usePathname } from "next/navigation";
 export default function Navbar() {
   const [menuModal, setMenuModal] = useState(false);
   const pathname = usePathname();
-  const isLoginPage = pathname === "/Login";
-
+  const isValidToShowThis = pathname === "/Dashboard" || pathname === "/Login";
   return (
     <header className="flex justify-between items-center px-0 lg:px-40 border-2 border-b-gray-200">
       <div>
@@ -53,7 +52,7 @@ export default function Navbar() {
           className=" fixed h-full w-full top-0 left-0 mt-20 text-center"
           bg-black
         >
-          {!isLoginPage ? (
+          {!isValidToShowThis ? (
             <div>
               <p className="font-bold text-xl">Nós lhe damos as boas vindas</p>
               <p>Faça login para poder criar um novo veiculo</p>
@@ -66,7 +65,7 @@ export default function Navbar() {
             </div>
           ) : (
             <div>
-              <p>Se concentre em se autenticar 🤣 </p>
+              <p>Você é incrível 💘</p>
               <div className="flex items-center gap-2 mt-8 p-8">
                 <button
                   className="bg-red-500 text-white font-bold "

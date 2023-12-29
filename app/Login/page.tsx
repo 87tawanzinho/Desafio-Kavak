@@ -15,6 +15,7 @@ export default function Cadastro() {
   const instanceLogin = instance;
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+  const [warn, setWarn] = useState("");
   const [data, setData] = useState<login>({
     name: "",
     password: "",
@@ -29,6 +30,7 @@ export default function Cadastro() {
   };
 
   const axiosRequest = async () => {
+    setWarn("Tentando se conectar..");
     setSuccess("");
     setError("");
     try {
@@ -45,9 +47,11 @@ export default function Cadastro() {
       }
       console.log(response);
       setSuccess("Se conectando, aguarde..");
+      setWarn("");
     } catch (err) {
       console.log(err);
       setError("Erro ao iniciar sessão");
+      setWarn("");
     }
   };
 
@@ -84,6 +88,7 @@ export default function Cadastro() {
           Kavak.
         </p>
         <button onClick={axiosRequest}>Entrar</button>
+        {warn && <p className="text-yellow-600">{warn}</p>}
         {success && <p className="text-green-600">{success}</p>}
         {error && <p className="text-red-600">{error}</p>}
       </div>

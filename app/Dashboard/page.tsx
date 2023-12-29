@@ -1,9 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
+import DashboardForm from "./components/DashboardForm";
 
 export default function Dashboard() {
   const [name, setName] = useState<string | null>(null);
-
+  const [sellCar, setSellcar] = useState(false);
   useEffect(() => {
     // Check if running on the client side
     if (typeof window !== "undefined") {
@@ -17,10 +18,20 @@ export default function Dashboard() {
     }
   }, []);
   return (
-    <div>
-      <p className="text-5xl p-14 lg:p-24">
-        Oi 👋, <span className="text-3xl">{name}</span>
-      </p>
+    <div className="justify-center flex flex-col items-center">
+      <div className="bg-gray-200 bg-opacity-50 w-full p-8 lg:p-24 text-gray-900">
+        <p>
+          Olá, <span className="font-bold">{name}</span>
+        </p>
+        <p>Seja bem vindo a sua central de vendas!</p>
+      </div>
+      {sellCar ? (
+        <div className=" ">
+          <DashboardForm />
+        </div>
+      ) : (
+        <button onClick={() => setSellcar(true)}>Vender seu carro</button>
+      )}
     </div>
   );
 }

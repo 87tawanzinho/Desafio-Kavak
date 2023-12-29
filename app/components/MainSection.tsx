@@ -31,13 +31,13 @@ export default function Mainsection() {
     takeCars();
   }, []);
   return (
-    <div className="flex flex-col lg:flex-row p-4 mt-10 lg:p-24 gap-8">
+    <div className="flex flex-col lg:flex-row  lg:flex-wrap p-4 mt-10 lg:p-24 gap-8">
       {cars.map((car) => (
         <main key={car._id}>
           <div className="border rounded-lg  border-gray-200 cursor-pointer  hover:bg-gray-100 transition-all">
             <img
-              src={car.photo}
-              className="w-screen lg:w-72  object-contain"
+              src={`${car.photo}`}
+              className="w-screen lg:w-72 h-48 object-cover"
             ></img>
             <div className=" pt-2 flex flex-col gap-2 ">
               <p className="font-bold px-4">

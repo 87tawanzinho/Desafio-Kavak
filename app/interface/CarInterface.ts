@@ -4,7 +4,7 @@ export interface CarI {
   model: string;
   price: string;
   localization: string;
-  photo: string;
+  photo: any;
   km: string;
-  _id: string;
+  _id?: string;
 }
