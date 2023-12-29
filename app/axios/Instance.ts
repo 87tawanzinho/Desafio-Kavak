@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const instance = axios.create({
-  baseURL: 'http://localhost:4000'
+  baseURL: 'https://backend-desafio-havek.vercel.app/'
 })
 
 instance.interceptors.request.use(
