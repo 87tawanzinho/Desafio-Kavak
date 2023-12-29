@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Oi, Obrigado pela oportunidade.
 
-## Getting Started
+Para instalar em sua maquina é só clonar o repo  e fazer um npm install, após isto utilizar npm run dev
 
-First, run the development server:
+Para o front end, eu fiz dessa forma:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Existe um componente chamado Mainsection, ele é responsavel por chamar a API e trazer todos os carros por um MAP 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Foi pedido que ordenasse o preço, então eu utilizei o metodo .short
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Foi criado um user especifico para vocês poderem acessarem
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+name: 123 password: 123
 
-## Learn More
+Ao entrar no Dashboard, você verá um local onde poderá adicionar novos veículos
 
-To learn more about Next.js, take a look at the following resources:
+Abaixo, você encontrará dois botões, um de editar e outro de excluir, são auto explicativos
+No mesmo lugar estará a listagem de todos os veiculos do user especifico
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Para a edição eu fiz um modal e puxei todos os dados da api de acordo com o id do carro e do user
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+O componente DashboardForm foi feito para a criação do formulario de veículos 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Foi criado três tipos de estados (success, error, warn)
+Esses estados indicam o tipo de mensagem na hora da requisição
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+A pasta public lista todas as imagens da aplicaçao 
+Em globals.css tem alguns estilos pré definidos, mas eu utilizei de forma majoritaria o TailwindCSS
+
+Para esse desafio eu quis trazer um layout clean e minimalista, deixando apenas o essencial na tela.
+
+Link: https://desafio-kavak.vercel.app/
