@@ -1,5 +1,6 @@
 // formulario para criar veículos
 import { instance } from '@/app/axios/Instance'
+import formatNumber from '@/app/functions/format'
 import { CarI } from '@/app/interface/CarInterface'
 import validateForm from '@/app/validations/validateForm'
 import { useEffect, useState } from 'react'
@@ -64,15 +65,17 @@ export default function DashboardForm({ setSellCar }: { setSellCar: React.MouseE
       return
     }
     try {
+      const priceFormat = formatNumber(data.price)
+      const kmFormat = formatNumber(data.km)
       const response = await instanceCreate.post('/createCar', {
         userId: userId,
         name: data.name,
         brand: data.brand,
         model: data.model.toString(),
         photo: data.photo.split(',')[1], // Extract the Base64-encoded part
-        price: data.price,
+        price: priceFormat,
         localization: data.localization,
-        km: data.km
+        km: kmFormat
       })
       console.log(response)
       window.location.reload()

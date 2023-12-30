@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import edit from '@/public/images/edit.gif'
 import Loading from '@/app/loading'
+import formatNumber from '@/app/functions/format'
 
 export default function MyCars() {
   const [vehicles, setVehicles] = useState<CarI[]>([])
@@ -48,13 +49,15 @@ export default function MyCars() {
   const editCar = async () => {
     setWarn('Aguarde, estamos atualizando..')
     try {
+      const priceFormated = formatNumber(editedData.price)
+      const kmFormated = formatNumber(editedData.km)
       const res = await instance.put(`/editCar/${idEditing.carId}/${idEditing.owner}`, {
         name: editedData.name,
         brand: editedData.brand,
         model: editedData.model,
-        price: editedData.price,
+        price: priceFormated,
         localization: editedData.localization,
-        km: editedData.km,
+        km: kmFormated,
         photo: editedData.photo.split(',')[1] // Extract the Base64-encoded part
       })
       console.log(res)
