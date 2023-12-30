@@ -95,7 +95,7 @@ export default function MyCars() {
       ) : (
         <div className='mt-10 text-2xl'>
           <p>Meus Veículos à venda</p>
-          <div className='bg-white h-96 rounded-lg text-sm text-center pt-10 text-gray-700 mt-4 overflow-auto'>
+          <div className='bg-white h-96 rounded-lg text-xs lg:text-sm text-center pt-10 text-gray-700 mt-4 overflow-auto'>
             {vehicles.length > 0 ? (
               <div>
                 <p>Meus Veículos</p>
@@ -104,7 +104,10 @@ export default function MyCars() {
                     <div className='flex items-center gap-4'>
                       <img src={car.photo} alt='foto' className='h-10 w-10 object-cover rounded-lg' />
                       <p className='text-gray-600'>{car.name}</p>
-                      <p className='text-green-800'>${car.price}</p>
+                      <p className='text-yellow-600'>
+                        <span className='text-green-800'>$</span>
+                        {car.price}
+                      </p>
                     </div>
                     <div className='flex items-center gap-2'>
                       <button
