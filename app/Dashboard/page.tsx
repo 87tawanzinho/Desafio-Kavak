@@ -29,7 +29,7 @@ export default function Dashboard() {
 
         <div className='mt-10'>
           {sellCar ? (
-            <DashboardForm />
+            <DashboardForm setSellCar={() => setSellcar(!sellCar)} />
           ) : (
             <div className='flex gap-8 mt-20'>
               <Image src={sell} alt='vendas' />

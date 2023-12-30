@@ -4,7 +4,7 @@ import { CarI } from '@/app/interface/CarInterface'
 import validateForm from '@/app/validations/validateForm'
 import { useEffect, useState } from 'react'
 
-export default function DashboardForm() {
+export default function DashboardForm({ setSellCar }: { setSellCar: React.MouseEventHandler<HTMLButtonElement> }) {
   const instanceCreate = instance
   const [userId, setUserId] = useState<string | null>('')
   const [data, setData] = useState<CarI>({
@@ -104,13 +104,7 @@ export default function DashboardForm() {
         <button type='submit' className='button-form-register' onClick={() => setButtonClicked(true)}>
           Cadastrar
         </button>
-        <button
-          className='button-form-back'
-          onClick={() => {
-            setWarn('')
-            window.location.href = '/Dashboard'
-          }}
-        >
+        <button className='button-form-back' onClick={setSellCar}>
           Voltar
         </button>
       </div>
