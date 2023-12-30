@@ -50,14 +50,14 @@ export default function MyCars() {
     setWarn('Aguarde, estamos atualizando..')
     try {
       const priceFormated = formatNumber(editedData.price)
-      const kmFormated = formatNumber(editedData.km)
+      const dataFormated = formatNumber(editedData.price) // todo
       const res = await instance.put(`/editCar/${idEditing.carId}/${idEditing.owner}`, {
         name: editedData.name,
         brand: editedData.brand,
         model: editedData.model,
-        price: priceFormated,
+        price: editedData.price,
         localization: editedData.localization,
-        km: kmFormated,
+        km: editedData.km,
         photo: editedData.photo.split(',')[1] // Extract the Base64-encoded part
       })
       console.log(res)
