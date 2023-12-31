@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 import { CarI } from '../interface/CarInterface'
 export default function Mainsection() {
   const axiosI = instance // pega a url da api
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const [cars, setCars] = useState<CarI[]>([
     // define o modelo do carro
     {
@@ -35,11 +35,6 @@ export default function Mainsection() {
     }
   }
   useEffect(() => {
-    const loading = async () => {
-      setIsLoading(true)
-      await new Promise((resolve) => setTimeout(resolve, 700))
-    }
-    loading()
     takeCars()
   }, [])
   return (
@@ -64,7 +59,7 @@ export default function Mainsection() {
         </div>
       ) : (
         <div className='flex flex-col lg:flex-row  lg:flex-wrap p-4 mt-10 lg:p-24 gap-8'>
-          {cars.length > 1 &&
+          {!isLoading &&
             cars.map((car) => (
               <main key={car._id}>
                 <div className='border rounded-lg  border-gray-200 cursor-pointer  hover:bg-gray-100 transition-all'>
