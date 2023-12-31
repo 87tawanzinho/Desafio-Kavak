@@ -58,7 +58,7 @@ export default function Mainsection() {
           </div>
         </div>
       ) : (
-        <div className='flex flex-col lg:flex-row  lg:flex-wrap p-4 mt-10 lg:p-24 gap-8'>
+        <div className='flex flex-col lg:flex-row  lg:flex-wrap p-4  lg:p-14 gap-8 justify-center'>
           {!isLoading &&
             cars.map((car) => (
               <main key={car._id}>
