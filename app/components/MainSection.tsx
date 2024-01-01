@@ -4,7 +4,7 @@ import Image from 'next/image'
 import gps from '@/public/images/gps.png'
 import { useEffect, useState } from 'react'
 import { CarI } from '../interface/CarInterface'
-import takeCars from '../hooks/takeCars'
+import useTakeCars from '../hooks/useTakeCars'
 import InputSearch from './InputSearch'
 import Loading from '../loading'
 export default function Mainsection() {
@@ -18,7 +18,7 @@ export default function Mainsection() {
       setCarsFiltered,
       setIsLoading
     }
-    takeCars(newParamsToTake)
+    useTakeCars(newParamsToTake)
   }, [])
 
   return (

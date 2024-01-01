@@ -4,7 +4,7 @@ import DashboardForm from './components/DashboardForm'
 import Image from 'next/image'
 import sell from '@/public/images/sell.png'
 import MyCars from './components/MyCars'
-import useLocalStorageName from '../hooks/localStorageExistName'
+import useLocalStorageName from '../hooks/useLocalStorageExistName'
 export default function Dashboard() {
   const [name, setName] = useState<string | null>(null)
   const [sellCar, setSellcar] = useState(false)
