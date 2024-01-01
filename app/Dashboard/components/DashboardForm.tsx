@@ -1,6 +1,7 @@
 // formulario para criar veículos
 import { instance } from '@/app/axios/Instance'
 import formatNumber from '@/app/functions/format'
+import useLocalStorageId from '@/app/hooks/localStorageExistId'
 import { CarI } from '@/app/interface/CarInterface'
 import validateForm from '@/app/validations/validateForm'
 import { useEffect, useState } from 'react'
@@ -12,7 +13,7 @@ export default function DashboardForm({ setSellCar }: { setSellCar: React.MouseE
     name: '',
     brand: '',
     model: '',
-    photo: '', // File data will be stored as a Base64-encoded data URL
+    photo: '',
     price: '',
     localization: '',
     km: ''
@@ -27,13 +28,7 @@ export default function DashboardForm({ setSellCar }: { setSellCar: React.MouseE
   }
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const userId = window.localStorage.getItem('id')
-      if (!userId) {
-        window.location.href = '/Login'
-      }
-      setUserId(userId)
-    }
+    useLocalStorageId(setUserId)
   })
 
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -4,20 +4,13 @@ import DashboardForm from './components/DashboardForm'
 import Image from 'next/image'
 import sell from '@/public/images/sell.png'
 import MyCars from './components/MyCars'
+import useLocalStorageName from '../hooks/localStorageExistName'
 export default function Dashboard() {
   const [name, setName] = useState<string | null>(null)
   const [sellCar, setSellcar] = useState(false)
   useEffect(() => {
     // Check if running on the client side
-    if (typeof window !== 'undefined') {
-      // Access window.localStorage safely
-
-      const storedName = window.localStorage.getItem('name')
-      if (!storedName) {
-        window.location.href = '/Login'
-      }
-      setName(storedName)
-    }
+    useLocalStorageName(setName)
   }, [])
   return (
     <div className='bg-gray-200 relative bg-opacity-50 w-full h-full p-8 lg:p-24 text-gray-900 lg:text-2xl flex flex-col gap-8'>

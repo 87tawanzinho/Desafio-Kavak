@@ -1,12 +1,21 @@
 export default function Loading() {
   return (
-    <div className='relative flex w-64 animate-pulse gap-2 p-4'>
-      <div className='h-12 w-12 rounded-full bg-slate-400'></div>
-      <div className='flex-1'>
-        <div className='mb-1 h-5 w-3/5 rounded-lg bg-slate-400 text-lg'></div>
-        <div className='h-5 w-[90%] rounded-lg bg-slate-400 text-sm'></div>
+    <div className='mt-20 flex flex-col justify-center items-center gap-4'>
+      <img
+        src='https://thumbs.dreamstime.com/b/het-bedrijfsconcept-bedrijfsvrouw-die-de-banner-houden-huurt-me-73893545.jpg'
+        alt='hire me'
+        className='h-40 w-40'
+      />
+      <div className='animate-pulse flex flex-col items-center gap-4 w-60'>
+        <div>
+          <div className='w-48 h-6 bg-slate-400 rounded-md'></div>
+          <div className='w-28 h-4 bg-slate-400 mx-auto mt-3 rounded-md'></div>
+        </div>
+        <div className='h-7 bg-slate-400 w-full rounded-md'></div>
+        <div className='h-7 bg-slate-400 w-full rounded-md'></div>
+        <div className='h-7 bg-slate-400 w-full rounded-md'></div>
+        <div className='h-7 bg-slate-400 w-1/2 rounded-md'></div>
       </div>
-      <div className='absolute bottom-5 right-0 h-4 w-4 rounded-full bg-slate-400'></div>
     </div>
   )
 }
