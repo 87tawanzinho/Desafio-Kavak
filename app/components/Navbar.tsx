@@ -86,10 +86,14 @@ export default function Navbar() {
               </p>
 
               <div className='bg-zinc-100 divMenu w-full text-start p-2 flex flex-col gap-4 font-bold'>
-                <a href='/'>Inicio</a>
-                <a href='/Dashboard'>Dashboard</a>
+                <a href='/'>
+                  Inicio <span className='text-blue-500'>{'->'}</span>
+                </a>
+                <a href='/Dashboard'>
+                  Dashboard <span className='text-blue-500'>{'->'}</span>
+                </a>
                 <a href='/' onClick={outAccount(setMenuModal)}>
-                  Sair da minha conta
+                  Sair da minha conta <span className='text-red-500'>{'↧'}</span>
                 </a>
               </div>
             </div>
