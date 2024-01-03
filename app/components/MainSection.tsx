@@ -8,6 +8,7 @@ import useTakeCars from '../hooks/useTakeCars'
 import InputSearch from './InputSearch'
 import Loading from '../loading'
 import Link from 'next/link'
+import UrlToCarId from '../functions/urlCarToId'
 export default function Mainsection() {
   const [isLoading, setIsLoading] = useState(true)
   const [carsFiltered, setCarsFiltered] = useState<CarI[]>([])
@@ -21,10 +22,6 @@ export default function Mainsection() {
     }
     useTakeCars(newParamsToTake)
   }, [])
-
-  const UrlToCarId = (car: CarI) => {
-    return `/${car._id}?name=${car.name}&brand=${car.brand}&model=${car.model}&price=${car.price}&km=${car.km}&photo=${car.photo}&localization=${car.localization}`
-  }
 
   return (
     <>
