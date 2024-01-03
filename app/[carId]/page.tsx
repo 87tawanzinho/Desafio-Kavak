@@ -9,7 +9,7 @@ function page({ params, searchParams }: { params: { carId: string }; searchParam
   return (
     <div className='flex flex-col lg:flex-row  justify-center pb-4 '>
       <div className='h-2/4   '>
-        <p className='text-green-600 p-4 w-full'>
+        <p className='text-blue-400 p-4 w-full'>
           {carInformations.brand} {'>'} {carInformations.name}
         </p>
         <img
@@ -24,13 +24,6 @@ function page({ params, searchParams }: { params: { carId: string }; searchParam
             alt='hire me'
             className='h-40 w-40'
           />
-          <p className='text-2xl mt-8 font-bold '>Vendendo meu peixe</p>
-          <p className='w-11/12 lg:w-96'>
-            Meu codigo pode não ser perfeito, posso não ser o melhor indicado ou o melhor currículo, mas posso fazer
-            acontecer.. <span className='text-blue-400 font-bold'>Quem acreditou</span> em você quando você ainda não
-            era um recrutador?
-          </p>
-          <p className='text-pink-600 font-bold'>Só preciso da sua oportunidade {'(;'}</p>
         </div>
       </div>
 
@@ -42,7 +35,7 @@ function page({ params, searchParams }: { params: { carId: string }; searchParam
           {carInformations.km} Km • {carInformations.localization}
         </p>
 
-        <p className='font-bold text-2xl text-green-600 mt-4 mb-4'>
+        <p className='font-bold text-2xl text-blue-500 mt-4 mb-4'>
           <span className='text-xl text-gray-800'>R$</span>
           {carInformations.price}
         </p>
@@ -58,15 +51,15 @@ function page({ params, searchParams }: { params: { carId: string }; searchParam
 
         <Link href={'https://wa.link/narclt'} target='blank'>
           <div className='mt-10'>
-            <button className='cursor-pointer relative group overflow-hidden border-2 w-full px-0 pt-2  border-green-500'>
-              <span className='font-bold text-white text-xl relative z-10 group-hover:text-green-500 duration-500'>
+            <button className='cursor-pointer relative group overflow-hidden border-2 w-full px-0 pt-2  border-blue-500'>
+              <span className='font-bold text-white text-xl relative z-10 group-hover:text-black duration-500'>
                 COMPRAR AGORA
               </span>
-              <span className='absolute top-0 left-0 w-full bg-green-500 duration-500 group-hover:-translate-x-full h-full'></span>
-              <span className='absolute top-0 left-0 w-full bg-green-500 duration-500 group-hover:translate-x-full h-full'></span>
+              <span className='absolute top-0 left-0 w-full bg-blue-500 duration-500 group-hover:-translate-x-full h-full'></span>
+              <span className='absolute top-0 left-0 w-full bg-blue-500 duration-500 group-hover:translate-x-full h-full'></span>
 
-              <span className='absolute top-0 left-0 w-full bg-green-500 duration-500 delay-300 group-hover:-translate-y-full h-full'></span>
-              <span className='absolute delay-300 top-0 left-0 w-full bg-green-500 duration-500 group-hover:translate-y-full h-full'></span>
+              <span className='absolute top-0 left-0 w-full bg-blue-500 duration-500 delay-300 group-hover:-translate-y-full h-full'></span>
+              <span className='absolute delay-300 top-0 left-0 w-full bg-blue-500 duration-500 group-hover:translate-y-full h-full'></span>
             </button>
           </div>
         </Link>
@@ -78,13 +71,6 @@ function page({ params, searchParams }: { params: { carId: string }; searchParam
             alt='hire me'
             className='h-40 w-40'
           />
-          <p className='text-2xl mt-8 font-bold '>Vendendo meu peixe</p>
-          <p className='w-11/12 lg:w-96'>
-            Meu codigo pode não ser perfeito, posso não ser o melhor indicado ou o melhor currículo, mas posso fazer
-            acontecer.. <span className='text-blue-400 font-bold'>Quem acreditou</span> em você quando você ainda não
-            era um recrutador?
-          </p>
-          <p className='text-pink-600 font-bold'>Só preciso da sua oportunidade {'(;'}</p>
         </div>
       </div>
     </div>
