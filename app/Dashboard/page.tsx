@@ -14,11 +14,11 @@ export default function Dashboard() {
   }, [])
   return (
     <div className='bg-gray-200 relative bg-opacity-50 w-full h-full p-8 lg:p-24 text-gray-900 lg:text-2xl flex flex-col gap-8'>
-      <div className='text-xl'>
+      <div className='text-lg lg:text-xl'>
         <p>
           Olá, <span className='font-bold'>{name}</span>
         </p>
-        <p>Seja bem vindo a sua central de vendas!</p>
+        <p className='text-pretty '>Seja bem vindo a sua central de vendas!</p>
 
         <div className='mt-10'>
           {sellCar ? (

@@ -62,7 +62,7 @@ export default function DashboardForm({ setSellCar }: { setSellCar: React.MouseE
     try {
       const priceFormat = formatNumber(data.price)
       const kmFormat = formatNumber(data.km)
-      const response = await instanceCreate.post('/createCar', {
+      await instanceCreate.post('/createCar', {
         userId: userId,
         name: data.name,
         brand: data.brand,

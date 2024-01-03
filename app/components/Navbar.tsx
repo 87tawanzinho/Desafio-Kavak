@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import menu from '@/public/images/menu.png'
 import { useEffect, useState } from 'react'
+import outAccount from '../functions/outAccount'
 
 export default function Navbar() {
   const [menuModal, setMenuModal] = useState(false)
@@ -16,13 +17,6 @@ export default function Navbar() {
     }
   }, []) // Run only once on component mount
 
-  const outAccount = () => {
-    window.location.href = '/'
-    setMenuModal(false)
-    window.localStorage.removeItem('id')
-    window.localStorage.removeItem('name')
-    window.localStorage.removeItem('token')
-  }
   return (
     <header className='flex justify-between items-center px-0 lg:px-40 border-2 border-b-gray-200'>
       <div>
@@ -52,7 +46,7 @@ export default function Navbar() {
               Dashboard
             </Link>
 
-            <Link href='/' className='text-red-600' onClick={outAccount}>
+            <Link href='/' className='text-red-600' onClick={outAccount(setMenuModal)}>
               Sair
             </Link>
           </div>
@@ -86,34 +80,17 @@ export default function Navbar() {
               </Link>
             </div>
           ) : (
-            <div>
-              <p className='button-delete absolute end-4 top-8 ' onClick={() => setMenuModal(false)}>
+            <div className='flex px-4 w-full'>
+              <p className='button-delete absolute end-2 top-4 ' onClick={() => setMenuModal(false)}>
                 X
               </p>
-              <p>Está gostando da experiência?</p>
-              <div className='flex items-center gap-2 mt-8 p-8 flex-wrap justify-center'>
-                <div className='flex flex-col gap-4'>
-                  <Link href='/' onClick={() => setMenuModal(false)}>
-                    <button>Inicio</button>
-                  </Link>
-                  <Link href='/Dashboard'>
-                    {' '}
-                    <button className='bg-green-300 border-none' onClick={() => setMenuModal(false)}>
-                      Dashboard
-                    </button>
-                  </Link>
-                  <Link href='https://github.com/87tawanzinho' target='blank'>
-                    <button className='bg-violet-300 border-none'>Github</button>
-                  </Link>
-                  <Link href='https://www.linkedin.com/in/thiago-tawan/' target='blank'>
-                    <button className='bg-blue-300 border-none'>Linkedin</button>
-                  </Link>
-                  <Link href='/'>
-                    <button className='bg-red-300 border-none' onClick={outAccount}>
-                      Sair da sua conta
-                    </button>
-                  </Link>
-                </div>
+
+              <div className='bg-zinc-100 divMenu w-full text-start p-2 flex flex-col gap-4 font-bold'>
+                <a href='/'>Inicio</a>
+                <a href='/Dashboard'>Dashboard</a>
+                <a href='/' onClick={outAccount(setMenuModal)}>
+                  Sair da minha conta
+                </a>
               </div>
             </div>
           )}

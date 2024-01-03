@@ -83,7 +83,7 @@ export default function MyCars() {
 
   // rota para deletar o carro
   const deleteCar = async (carId: string | undefined, userId: string | undefined) => {
-    const deleted = await instance
+    await instance
       .delete(`/user/${userId}/car/${carId}`)
       .then((res) => fetchData())
       .catch((err) => console.log(err))
@@ -95,11 +95,11 @@ export default function MyCars() {
         <Loading />
       ) : (
         <div className='mt-10 text-2xl'>
-          <p>Meus Veículos à venda</p>
+          <h2 className='text-gray-700'>Meus Veículos à venda</h2>
           <div className='bg-white h-96 rounded-lg text-xs lg:text-sm text-center pt-10 text-gray-700 mt-4 overflow-auto'>
             {vehicles.length > 0 ? (
               <div>
-                <p>Meus Veículos</p>
+                <p>Veículos</p>
                 {vehicles.map((car) => (
                   <div key={car._id} className='flex justify-between items-center mt-4 px-4'>
                     <div className='flex items-center gap-4'>
