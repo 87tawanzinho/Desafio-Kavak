@@ -22,6 +22,10 @@ export default function Mainsection() {
     useTakeCars(newParamsToTake)
   }, [])
 
+  const UrlToCarId = (car: CarI) => {
+    return `/${car._id}?name=${car.name}&brand=${car.brand}&model=${car.model}&price=${car.price}&km=${car.km}&photo=${car.photo}&localization=${car.localization}`
+  }
+
   return (
     <>
       {isLoading ? (
@@ -33,8 +37,8 @@ export default function Mainsection() {
           <div className='flex flex-col lg:flex-row  lg:flex-wrap p-4  lg:p-14 gap-8 justify-center'>
             {!isLoading &&
               carsFiltered.map((car) => (
-                <Link href={`/${car._id}`}>
-                  <main key={car._id}>
+                <Link href={UrlToCarId(car)} key={car._id}>
+                  <main>
                     <div className='border rounded-lg  border-gray-200 cursor-pointer  hover:bg-gray-100 transition-all'>
                       <img src={`${car.photo}`} className='w-screen lg:w-72 h-48 object-cover'></img>
                       <div className=' pt-2 flex flex-col gap-2 '>
