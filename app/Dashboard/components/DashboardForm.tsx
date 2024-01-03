@@ -72,7 +72,7 @@ export default function DashboardForm({ setSellCar }: { setSellCar: React.MouseE
         localization: data.localization,
         km: kmFormat
       })
-      console.log(response)
+
       window.location.reload()
     } catch (err) {
       console.error('Erro ao enviar o formulario:', err)

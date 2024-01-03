@@ -19,7 +19,6 @@ const filteredCars = (
       car.name.toLowerCase().includes(nameTarget.toLowerCase()) ||
       car.brand.toLowerCase().includes(nameTarget.toLowerCase())
   )
-  console.log(carsFilteredNow)
   setCarsFiltered(carsFilteredNow)
 }
 

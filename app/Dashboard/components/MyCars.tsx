@@ -60,12 +60,10 @@ export default function MyCars() {
         km: editedData.km,
         photo: editedData.photo.split(',')[1] // Extract the Base64-encoded part
       })
-      console.log(res)
       fetchData()
       setIsEditing(false)
       setWarn('')
     } catch (err) {
-      console.log(err)
       setWarn('Ocorreu um erro')
     }
   }

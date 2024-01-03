@@ -22,7 +22,6 @@ export default function Navbar() {
     window.localStorage.removeItem('id')
     window.localStorage.removeItem('name')
     window.localStorage.removeItem('token')
-    console.log('outing')
   }
   return (
     <header className='flex justify-between items-center px-0 lg:px-40 border-2 border-b-gray-200'>
